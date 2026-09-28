@@ -57,6 +57,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "hotwire-spark"
 end
 
 group :test do
@@ -66,3 +67,8 @@ group :test do
 end
 
 gem "devise", "~> 5.0"
+gem "administrate", "~> 1.0"
+gem "rails-i18n", "~> 8.1"
+gem "devise-i18n", "~> 1.16"
+gem "figaro"
+gem "administrate-field-active_storage", "~> 1.0"

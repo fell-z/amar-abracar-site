@@ -1,0 +1,47 @@
+<main class="document-registry-layout">
+  <% unless @history_documents.any? || @legal_documents.any? || @other_documents.any? %>
+    <p>Não há arquivos registrados.</p>
+  <% end %>
+
+  <% if @history_documents.any? %>
+    <section>
+      <h2>Histórico</h2>
+      <ul>
+        <% @history_documents.each do |d| %>
+          <li>
+            <%= d.name %>:
+            <%= rails_blob_path d.file %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <% if @legal_documents.any? %>
+    <section>
+      <h2>Legais</h2>
+      <ul>
+        <% @legal_documents.each do |d| %>
+          <li>
+            <%= d.name %>:
+            <%= rails_blob_path d.file %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <% if @other_documents.any? %>
+    <section>
+      <h2>Outros</h2>
+      <ul>
+        <% @other_documents.each do |d| %>
+          <li>
+            <%= d.name %>:
+            <%= link_to "Baixar arquivo", rails_blob_path(d.file, disposition: "attachment") %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+</main>

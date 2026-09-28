@@ -1,0 +1,12 @@
+pt-BR:
+  views:
+    pagination:
+      first: Início
+      previous: Anterior
+      next: Próximo
+      last: Fim
+  administrate:
+    fields:
+      active_storage:
+        add: "Adicionar"
+        replace: "Substituir"

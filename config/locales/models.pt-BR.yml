@@ -1,0 +1,49 @@
+pt-BR:
+  number:
+    format:
+      separator: ","
+      delimiter: "."
+      precision: 2
+    currency:
+      format:
+        unit: "R$"
+        separator: ","
+        delimiter: "."
+        format: "%u %n"
+  activerecord:
+    models:
+      admin_user:
+        one: "Administrador"
+        other: "Administradores"
+      transfer:
+        one: "Transferência"
+        other: "Transferências"
+      help_request:
+        one: "Pedido de ajuda"
+        other: "Pedidos de ajuda"
+      document:
+        one: "Documento"
+        other: "Documentos"
+    attributes:
+      admin_user:
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      transfer:
+        title: "Título"
+        description: "Descrição"
+        amount: "Valor"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      help_request:
+        name: "Nome"
+        email: "E-mail"
+        phone_number: "Número de Telefone"
+        address: "Endereço"
+      document:
+        name: "Nome"
+        file: "Arquivo"
+        doctype: "Tipo de documento"
+      document/doctype:
+        history: "Histórico"
+        legal: "Legal"
+        other: "Outro"

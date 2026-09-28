@@ -1,0 +1,73 @@
+<% content_for :head do %>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
+<% end %>
+
+<main>
+  <% flash.each do |key, value| %>
+    <div class="flash flash-<%= key %>"><%= value %></div>
+  <% end %>
+
+  <section class="card transparency-portal">
+    <h2>Portal da transparência</h2>
+    <%= render "transfers/table", transfers: @transfers %>
+    <%= link_to "Acessar histórico completo", transfers_path %>
+  </section>
+
+  <section class="project-info">
+    <h2>Conheça o projeto</h2>
+    <div class="side-by-side">
+      <img src="https://placehold.co/400x300" alt="all project members">
+      <section class="card text-part origin">
+        <h3>Origem</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+          inventore pariatur. Ea eveniet quia obcaecati ipsam modi explicabo
+          minima porro. Vero molestias optio vel asperiores modi rem accusamus
+          explicabo voluptatibus.
+        </p>
+      </section>
+    </div>
+
+    <div class="side-by-side">
+      <section class="card text-part">
+        <h3>Nossa missão</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+          inventore pariatur. Ea eveniet quia obcaecati ipsam modi explicabo
+          minima porro. Vero molestias optio vel asperiores modi rem accusamus
+          explicabo voluptatibus.
+        </p>
+      </section>
+
+      <section class="card text-part">
+        <h3>Objetivo</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+          inventore pariatur. Ea eveniet quia obcaecati ipsam modi explicabo
+          minima porro. Vero molestias optio vel asperiores modi rem accusamus
+          explicabo voluptatibus.
+        </p>
+      </section>
+    </div>
+  </section>
+
+  <section class="card contact">
+    <h2>Contato</h2>
+    <address>
+      <span class="icon-text">
+        <i class="iconoir-mail"></i>
+        <a href="mailto:email.exemplo@exemplo.com">email.exemplo@exemplo.com</a>
+      </span><br>
+      <span class="icon-text">
+        <i class="iconoir-phone"></i>
+        +27 12345-6789
+      </span><br>
+      <span class="icon-text">
+        <i class="iconoir-map-pin"></i>
+        Cidade Exemplo, Bairro Exemplo, Número Exemplo
+      </span>
+    </address>
+  </section>
+</main>

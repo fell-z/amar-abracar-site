@@ -1,0 +1,54 @@
+<main class="help-layout">
+
+  <section>
+    <h2>Quero ser ajudado!</h2>
+    <%= render "form", help_request: @help_request %>
+    <% if flash.any? %>
+      <section>
+        <% flash.each do |key, value| %>
+          <div class="flash flash-<%= key %>"><%= value %></div>
+        <% end %>
+      </section>
+    <% end %>
+    <% if @help_request.errors.any? %>
+      <div class="error-cards">
+        <% @help_request.errors.full_messages.each do |m| %>
+          <div class="flash flash-alert">
+            <%= m %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Quero ajudar!</h2>
+    <ul class="help-methods">
+      <li>
+        Pix
+        <ul>
+          <li>Chave 1</li>
+          <li>Chave 2</li>
+        </ul>
+      </li>
+
+      <li>
+        Transferência Bancária
+        <ul>
+          <li>Metódo 1</li>
+          <li>Metódo 2</li>
+        </ul>
+      </li>
+
+      <li>
+        Outras formas
+        <ul>
+          <li>Metódo 1</li>
+          <li>Metódo 2</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</main>

@@ -1,0 +1,7 @@
+<main>
+  <section class="card">
+    <h2>Histórico</h2>
+    <%= render "table", transfers: @transfers %>
+    <%= page_controls @transfers, @page_number %>
+  </section>
+</main>
