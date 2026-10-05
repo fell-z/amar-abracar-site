@@ -1,6 +1,9 @@
 form {
-  .field-unit__field input {
-    border: 1px solid oklch(0.5062 0.0017 247.84);
+  .field-unit__field {
+    input,
+    textarea {
+      border: 1px solid oklch(0.5062 0.0017 247.84);
+    }
   }
 
   .field-unit--active-storage .field-unit__field div {

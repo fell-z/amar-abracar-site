@@ -1,3 +1,6 @@
 class HelpRequest < ApplicationRecord
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :name, presence: true
+  validates :email, presence:true , format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :phone_number, presence: true
+  validates :address, presence: true
 end

@@ -11,7 +11,7 @@ class DocumentDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     doctype: EnumField,
-    file: Field::ActiveStorage,
+    file: Field::ActiveStorage.with_options(index_display_preview: false, show_display_preview: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

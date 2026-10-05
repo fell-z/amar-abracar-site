@@ -1,24 +1,28 @@
-# README
+# Amar e Abraçar
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A aplicação foi feita com Rails 8.1+ com SQLite no Backend e HTML, CSS e JS puros no Frontend.
 
-Things you may want to cover:
+## Configuração
 
-* Ruby version
+Instale as dependências com:
+```bash
+bundle install
+```
 
-* System dependencies
+> [!WARNING]
+> Certifique de configurar o Figaro com as variáveis de ambiente corretas, como o usuário administrador.
+```bash
+bundle exec figaro install
+# Edite o arquivo gerado em 'config/application.yml'
+```
 
-* Configuration
+Prepare a base de dados com:
+```bash
+rails db:setup
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Inicie o servidor de desenvolvimento com:
+```bash
+bin/dev
+# ou 'rails server'
+```

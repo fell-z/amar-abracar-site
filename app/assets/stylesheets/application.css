@@ -206,6 +206,7 @@ form {
   }
 
   input[type="text"],
+  input[type="search"],
   input[type="email"],
   input[type="tel"],
   input[type="password"] {
@@ -234,11 +235,38 @@ form {
   }
 }
 
+div:has(form.order-form) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  form {
+    flex-direction: row;
+    align-items: center;
+
+    .field {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0;
+
+      label {
+        min-width: max-content;
+      }
+    }
+  }
+}
+
 main.help-layout {
   flex-direction: row;
 
   section {
     min-width: 300px;
+  }
+
+  .warning {
+    max-width: 30ch;
   }
 }
 
@@ -292,6 +320,20 @@ body.admin-auth-layout {
   box-shadow:
     0 4px 6px oklch(0 0 0 / 5%),
     0 1px 3px oklch(0 0 0 / 10%);
+}
+
+.auth-card {
+  min-width: 400px;
+}
+
+.error-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .flash {
+    width: max-content;
+  }
 }
 
 .flash {

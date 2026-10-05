@@ -10,4 +10,14 @@ class Transfer < ApplicationRecord
     end
     super(value)
   end
+
+  def self.order_options
+    attribute_names.reject { |a| %w[id title description updated_at].include? a }.map do |a|
+      if a == "created_at"
+        ["Data", a]
+      else
+        [I18n.t("activerecord.attributes.transfer.#{a}"), a]
+      end
+    end
+  end
 end

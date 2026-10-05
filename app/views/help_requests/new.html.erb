@@ -1,14 +1,12 @@
 <main class="help-layout">
-
   <section>
     <h2>Quero ser ajudado!</h2>
+    <p class="warning">Certifique que as informações de contato estão corretas</p>
     <%= render "form", help_request: @help_request %>
     <% if flash.any? %>
-      <section>
-        <% flash.each do |key, value| %>
-          <div class="flash flash-<%= key %>"><%= value %></div>
-        <% end %>
-      </section>
+      <% flash.each do |key, value| %>
+        <div class="flash flash-<%= key %>"><%= value %></div>
+      <% end %>
     <% end %>
     <% if @help_request.errors.any? %>
       <div class="error-cards">

@@ -1,6 +1,32 @@
 <main>
   <section class="card">
-    <h2>Histórico</h2>
+    <div>
+      <h2>Histórico</h2>
+      <%= form_with url: request.path, method: :get, class: "order-form" do |f| %>
+        <% request.query_parameters.except(:page_number).each do |key, value| %>
+          <%= hidden_field_tag key, value %>
+        <% end %>
+
+        <%= hidden_field_tag :page_number, 1 %>
+
+        <div class="field">
+          <%= f.label :q, "Buscar por:" %>
+          <%= f.search_field :q, placeholder: "...", value: @query %>
+        </div>
+
+        <div class="field">
+          <%= f.label :ordered_by, "Ordenar por:" %>
+          <%= f.select :ordered_by, Transfer.order_options, selected: @ordered_by %>
+        </div>
+        <div class="field">
+          <%= f.label :direction, "Sentido:" %>
+          <%= f.select :direction, [["Crescente", "asc"], ["Descrescente", "desc"]], selected: @direction %>
+        </div>
+        <div>
+          <%= f.button "Buscar" %>
+        </div>
+      <% end %>
+    </div>
     <%= render "table", transfers: @transfers %>
     <%= page_controls @transfers, @page_number %>
   </section>

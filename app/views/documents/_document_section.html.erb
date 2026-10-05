@@ -1,0 +1,13 @@
+<% if documents.any? %>
+  <section>
+    <h2><%= heading %></h2>
+    <ul>
+      <% documents.each do |d| %>
+        <li>
+          <%= d.name %>:
+          <%= link_to "Baixar arquivo", rails_blob_path(d.file, disposition: "attachment") %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>

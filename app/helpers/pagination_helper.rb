@@ -16,7 +16,7 @@ module PaginationHelper
     return unless page_number > 1
 
     tag.li do
-      link_to t("views.pagination.previous"), controller:, action: :index, page_number: page_number - 1
+      link_to t("views.pagination.previous"), url_for(request.query_parameters.merge(page_number: page_number - 1))
     end
   end
 
@@ -24,7 +24,7 @@ module PaginationHelper
     return unless page_number < maximum_pages
 
     tag.li do
-      link_to t("views.pagination.next"), controller:, action: :index, page_number: page_number + 1
+      link_to t("views.pagination.next"), url_for(request.query_parameters.merge(page_number: page_number + 1))
     end
   end
 end
