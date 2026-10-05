@@ -25,7 +25,6 @@ services:
 
 databases:
   - name: amar-abracar-site
-    databaseName: amar-abracar-site
     plan: free
     postgresMajorVersion: 18
     ipAllowList: []
