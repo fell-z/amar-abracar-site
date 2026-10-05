@@ -1,11 +1,15 @@
+# render.yaml
+# See https://render.com/docs/blueprint-spec for details
 services:
   - type: web
     name: amar-abracar-site
-    runtime: ruby
+    env: docker
+    repo: https://github.com/fell-z/amar-abracar-site.git
     plan: free
-    buildCommand: './bin/render-build.sh'
-    startCommand: './bin/rails server'
+    healthCheckPath: /
     envVars:
+      - key: RUBY_VERSION
+        value: "4.0.2"
       - key: DATABASE_URL
         fromDatabase:
           name: amar-abracar-site
@@ -18,6 +22,10 @@ services:
         sync: false
       - key: DEFAULT_ADMIN_PASS
         sync: false
+
 databases:
   - name: amar-abracar-site
+    databaseName: amar-abracar-site
     plan: free
+    postgresMajorVersion: 18
+    ipAllowList: []
